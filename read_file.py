@@ -9,7 +9,7 @@ import scipy
 deal with data~
 
 """
-path = '/media/kevin/新增磁碟區/Desktop/機器學習/HW1/CroppedYale'
+path = 'CroppedYale/'
 
 train_data = []
 test_data = []
@@ -20,7 +20,7 @@ man_flag=0
 
 for filename in os.listdir(path):
     print(path+'/'+filename)
-    paths, dirs, files = os.walk(path+'/'+filename).__next__()
+    paths, dirs, files = os.walk(path+'/'+filename).next()
     file_count = len(files)
     print(file_count)
     count_data=0
@@ -49,8 +49,12 @@ for filename in os.listdir(path):
     man_flag+=1
     #train_data.append(temp_train)
     #test_data.append(temp_test)
-
+print(train_data)
+print(len(train_data))
 train_data=numpy.array(train_data)
+print('aaaaa', train_data)
+print('aaaaa', train_data.shape)
+quit()
 test_data=numpy.array(test_data)
 train_label=numpy.array(train_label)
 test_label=numpy.array(test_label)
@@ -58,17 +62,18 @@ train_data=train_data.astype(int)
 test_data=test_data.astype(int)
 train_label=train_label.astype(int)
 test_label=test_label.astype(int)
-print(train_label.shape)
-print(test_label.shape)
-print(train_data.shape)
-print(test_data.shape)
-print(len(train_data))
-print(len(test_data))
-print(train_data[0])
-print(test_data[0])
-print(abs( test_data[0] - train_data[0] ))
-print( test_data[0] - train_data[0] )
+print("train_label.shape    : {}".format(train_label.shape))
+print("test_label.shape     : {}".format(test_label.shape))
+print("train_data.shape     : {}".format(train_data.shape))
+print("test_data.shape      : {}".format(test_data.shape))
+print("len(train_data)      : {}".format(len(train_data)))
+print("len(test_data)       : {}".format(len(test_data)))
+print("train_data[0])       : {}".format(train_data[0]))
+print("test_data[0]         : {}".format(test_data[0]))
+print("abs( test_data[0] - train_data[0] ) = {}".format(abs( test_data[0] - train_data[0] )))
+print("test_data[0] - train_data[0]        = {}".format(test_data[0] - train_data[0]))
 
+quit()
 """
     SAD
 """
